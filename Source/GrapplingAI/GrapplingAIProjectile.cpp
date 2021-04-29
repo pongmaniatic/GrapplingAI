@@ -33,12 +33,15 @@ AGrapplingAIProjectile::AGrapplingAIProjectile()
 
 void AGrapplingAIProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 11.0f, FColor::Red, "hit");
-	UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
-	// Only add impulse and destroy projectile if we hit a physics
-	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComp != nullptr) && OtherComp->IsSimulatingPhysics())
+
+	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComp != nullptr) && OtherComp->IsSimulatingPhysics())//hit dynamic object
 	{
 		
 		
+		
+	}
+	else//hit static object
+	{
+
 	}
 }
